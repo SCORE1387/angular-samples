@@ -17,11 +17,15 @@ export class HeroService {
   }
 
   getHero(id: number): Promise<Hero> {
-    return this.getHeroes().then(heroes => heroes.find(hero => hero.id === id));
+    const getHeroUrl = `${this.heroesUrl}/${id}`;
+    return this.http.get(getHeroUrl)
+      .toPromise()
+      .then(response => response.json().data as Hero)
+      .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {
-    console.error('Unable to retrieve heroes.', error);
+    console.error('Unable to retrieve hero(es).', error);
     return Promise.reject(error.message || error);
   }
 }
