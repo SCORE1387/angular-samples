@@ -3,13 +3,14 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 
 import {AppComponent} from './app.component';
 import {HeroDetailComponent} from './hero-detail/hero-detail.component';
 import {HeroesListComponent} from './heroes-list/heroes-list.component';
 import {HeroService} from './shared/hero.service';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {HeroSearchComponent} from './hero-search/hero-search.component';
 import {InMemoryDataService} from './in-memory-data/in-memory-data.service';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -19,7 +20,8 @@ import {AppRoutingModule} from './app-routing.module';
     AppComponent,
     HeroDetailComponent,
     HeroesListComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,
